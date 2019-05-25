@@ -21,7 +21,7 @@ typescript                   3.2.4
 
 ## installation procedure :
 
-## Install node.js               : sudo apt-get install -y nodejs
+    Install node.js               : sudo apt-get install -y nodejs
     Install install @angular/cli. : sudo npm install -g @angular/cli
     
 
