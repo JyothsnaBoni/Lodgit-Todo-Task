@@ -3,11 +3,11 @@
 This repository has two projects, TodoClient and TodoServer
 
 
-#TodoServer 
+# TodoServer 
 
-$project  : implementation of NodeJS REST API to implement a todo application
-$database : SQLite
-$code     : written in ES6 and uses promises
+$ project  : implementation of NodeJS REST API to implement a todo application
+$ database : SQLite
+$ code     : written in ES6 and uses promises
 
 
 ## Requirements
