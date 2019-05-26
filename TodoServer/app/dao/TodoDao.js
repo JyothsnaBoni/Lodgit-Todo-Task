@@ -135,8 +135,14 @@ class TodoDao {
      * returns database deletion status
      */
     deleteById(subject) {
-        let sqlRequest = "DELETE FROM todo WHERE subject=$subject";
-        let sqlParams = {$subject: subject};
+        var  subject = input.split(`-`);
+    
+        let sqlParams = {
+            $subject:  subject[0],
+            $category: subject[1]
+        };
+        let sqlRequest = "DELETE FROM todo WHERE subject=$subject and category=$category";
+        
         return this.common.run(sqlRequest, sqlParams);
     };
 
