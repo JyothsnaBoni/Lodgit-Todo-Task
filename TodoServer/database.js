@@ -13,7 +13,7 @@ let init = function () {
     db.run(`CREATE TABLE if not exists todo(subject TEXT NOT NULL,status TEXT, created TEXT, modified TEXT, category TEXT,PRIMARY KEY ( subject, category))`);
       
 
-    db.run(`CREATE TABLE if not exists category(name TEXT PRIMARY KEY,created TEXT, modified TEXT, category TEXT)`);
+    db.run(`CREATE TABLE if not exists category(name TEXT PRIMARY KEY,created TEXT, modified TEXT)`);
         
 
 };

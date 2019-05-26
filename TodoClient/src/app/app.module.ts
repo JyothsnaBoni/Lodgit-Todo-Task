@@ -10,6 +10,8 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
 import { DeleteTodoComponent } from './delete-todo/delete-todo.component';
 import { UpdateTodoComponent } from './update-todo/update-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     DeleteTodoComponent,
     UpdateTodoComponent,
     TodoListComponent,
+    CategoryListComponent
     
    
   ],

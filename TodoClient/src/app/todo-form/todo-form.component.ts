@@ -38,32 +38,26 @@ export class TodoFormComponent implements OnInit {
    }
   
 
+   ngOnInit() {
+      
+  }
+
   @ViewChild('form') todoForm: NgForm;
 
   constructor(private form: FormBuilder,
     private todoService: TodoService,
     ) {   }
 
-
-  
-
-  ngOnInit() {
-      
-  }
-
   onSubmit(){
-    this.submitted = true;   
+  
+  this.submitted = true;   
     
-   console.log();
+  console.log();
 
    this.todoService.addtodo(this.todoForm.value).subscribe();
-     
-    
-   
+      
     
   }
   
-
-
 
 }

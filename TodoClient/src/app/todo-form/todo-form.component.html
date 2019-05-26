@@ -51,7 +51,7 @@
 
   <div class="w3-container">
 
-    <div [hidden]="submitted">
+    <div >  <!--[hidden]="submitted"-->
             <h1>Todo Form</h1>
       
       
@@ -74,6 +74,7 @@
         </div>
         
         <div class="form-group">
+
         <!--
           <label for="status">Status</label>
           <select type="text" class="form-control" id="status"
@@ -81,7 +82,7 @@
               <option value="open">OPEN</option>
               <option value="done">DONE</option>
               </select>
-            -->
+        -->
           
             <select ngModel name="status" #name="ngModel" [(ngModel)]="model.status">
                 <option *ngFor="let myOption of myOptions" [value]="myOption.id"> 
@@ -107,12 +108,12 @@
 
       </form>
         <div class="w3-container">
-          <!--
-           <label for="category">*Click below to enter new subject and new category</label><br>
+           <!--           <label for="category">*Click below to enter new subject and new category</label><br>
            <button type="button" class="button" (click)="newTodo(); todoForm.reset()">New Todo</button><br>
            <label for="category">*Click below to enter same subject to new category</label>
            <button type="button" class="button" (click)="newTodo()">New Todo</button> 
-          --> 
+           -->
+
        </div>
      </div>
 </div>

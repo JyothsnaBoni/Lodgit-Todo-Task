@@ -6,6 +6,7 @@ router.use(cors());
 
 /* Load controller */
 const TodoController = require('../../control/TodoController');
+const categoryController = require('../../control/CategoryController');
 const todoController = new TodoController();
 
 /**
@@ -34,8 +35,9 @@ router.put('/:subject', function (req, res) {
 });
 
 router.post('/create', function (req, res) {
-    console.log("create called");
-    
+
+    console.log("Todo routed to create");
+
     todoController.create(req, res);
    
 });

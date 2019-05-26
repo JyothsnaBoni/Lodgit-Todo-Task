@@ -5,6 +5,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 import { Todo } from '../model/Todo';
 import { stringify } from '@angular/compiler/src/util';
 import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
+import { Category } from '../model/category';
 
 
 const httpOptions = {
@@ -56,7 +57,7 @@ export class TodoService {
   /** DELETE: delete the todo from the server */
   deleteTodo (subject: string): Observable<{}> {
    
-    return this.http.delete('localhost:3000/Todo/'+ 'subject');
+    return this.http.delete('localhost:9000/Todo/'+ 'subject');
     
   }
 
@@ -65,14 +66,17 @@ export class TodoService {
 
     const form = new FormData;
     //take subject name input from the list, return the subject
-    return this.http.post('localhost:3000/Todo/'+ 'subject', form);
+    return this.http.post('localhost:9000/Todo/'+ 'subject', form);
   }
 
   todoList(){
     //take the list of todo and return the list
     return this.http.get<Todo[]>('http://localhost:9000/Todo');
   }
-  
+  CategoryList(){
+    //take the list of catergoeis and return the list
+    return this.http.get<Category[]>('http://localhost:9000/Category');
+  }
 
 
 /*

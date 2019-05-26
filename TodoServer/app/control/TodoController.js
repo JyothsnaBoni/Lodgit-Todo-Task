@@ -83,12 +83,15 @@ class TodoController {
             todo.subject = req.body.subject;
             
         }
-        //var newDate = new Date();
-        //var datetime = "LastSync: " + newDate.today() + " @ " + newDate.timeNow();
+
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
         todo.subject = req.body.subject;
         todo.status= req.body.status;
-        todo.created = '';
-        todo.modified = '';
+        todo.created = dateTime;
+        todo.modified = "---";
         todo.category = req.body.category;
 
         if (req.body.subject) {

@@ -70,6 +70,7 @@ class Common {
     }
 
     run(sqlRequest, sqlParams) {
+        console.log("entered final level")
         return new Promise(function (resolve, reject) {
             let stmt = database.db.prepare(sqlRequest);
             stmt.run(sqlParams, function (err) {

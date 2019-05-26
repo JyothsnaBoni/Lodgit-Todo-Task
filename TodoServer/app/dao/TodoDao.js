@@ -78,21 +78,19 @@ class TodoDao {
      * returns database insertion status
      */
     create(Todo) {
+
         let sqlRequest = `INSERT INTO todo(subject, status, created, modified, category)
         VALUES ($subject, $status, $created , $modified , $category)`;
-        
-      //  "INSERT into todo (subject, status, created, modified, category) " +
-        //    "VALUES ($subject, $status, $created, $modified,$category)";
-       console.log("entered  create");
-           
+
         let sqlParams = {
-            $subject: Todo.subject,
-            $status : Todo.status,
-            $created : Todo.created,
+            $subject  : Todo.subject,
+            $status   : Todo.status,
+            $created  : Todo.created,
             $modified : Todo.modified,
             $category : Todo.category
             
         };
+        
         
         return this.common.run(sqlRequest, sqlParams);
     };
@@ -103,9 +101,23 @@ class TodoDao {
      * returns database insertion status
      */
     createWithId(Todo) {
-        let sqlRequest = "INSERT into todo (subject, status, created, modified, category) " +
+
+
+        let sqlRequest = "INSERT into category(name, created, modified) " +
+        "VALUES ($name, $created, $modified)";
+        console.log("created with subject ");
+    let sqlParams = {
+        $name: Todo.category,
+        $created: Todo.created,
+        $modified: Todo.modified
+        
+    };
+    this.common.run(sqlRequest, sqlParams);
+
+        sqlRequest = "INSERT into todo (subject, status, created, modified, category) " +
             "VALUES ($subject, $status, $created, $modified, $category)";
-        let sqlParams = {
+            console.log("created with subject ");
+        sqlParams = {
             $subject: Todo.subject,
             $status: Todo.status,
             $created: Todo.created,
@@ -113,6 +125,7 @@ class TodoDao {
             $category: Todo.category
             
         };
+        
         return this.common.run(sqlRequest, sqlParams);
     };
 
