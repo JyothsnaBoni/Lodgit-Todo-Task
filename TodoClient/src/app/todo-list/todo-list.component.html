@@ -9,13 +9,14 @@
   </li>
 </ul>
 -->
-
+<!--
 <h3>Todo List</h3>
 <div>
   <label>subject:
     <input #todoSubject />
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
+  <!--
   <button (click)="add(todoSubject.value); todoSubject.value=''">
     add
   </button>
@@ -75,3 +76,102 @@
         </ul>
 
   </div>
+-->
+
+
+
+  <!-- (click) passes input value to add() and then clears the input 
+  <button (click)="add(todoSubject.value); todoSubject.value=''">
+    add
+  </button>
+  -->
+
+  <hr>
+  <div>
+    <label>subject:
+      <input #todoSubject />
+    </label>  
+        <button (click)="search(todoSubject.value)">
+           search
+        </button>
+  
+</div>
+<hr>
+
+
+
+<div class="w3-container">
+    <div>
+        <label>Todo List:</label>  
+        <button (click)="getTodoList()">list todos</button>
+    </div>
+      <ul class="w3-container">
+           
+      <table style="width:100%"> 
+          <th>SUBJECT</th>
+          <th>STATUS</th>
+          <th>CREATED</th>
+          <th>MODIFIED</th>
+          <th>CATEGORY</th> 
+          <th>DELETE</th>
+       <!-- <li *ngFor="let todo of todos"> -->
+
+      
+            <tr *ngFor="let todo of todos">
+                  
+                  <td>  
+                    <a (click)="edit(todo)">
+                      <span *ngIf="todo!==editTodo">{{todo.subject}}</span>
+                      <input *ngIf="todo===editTodo" [(ngModel)]="todo.subject"
+                        (blur)="update()" (keyup.enter)="update()">
+                    </a>
+                  </td>
+
+                  <td>    
+                    <a (click)="edit(todo)">
+                      <span *ngIf="todo!==editTodo">{{todo.status}}</span>
+                      <input *ngIf="todo===editTodo" [(ngModel)]="todo.status"
+                        (blur)="update()" (keyup.enter)="update()">
+                    </a>
+                  </td>
+
+                  <td>
+                    <a>
+                      <span>{{todo.created}}</span>
+                    </a>
+                  </td>
+
+                  <td>
+                    <a>
+                     <span>{{todo.modified}}</span>
+                    </a>
+                  </td>
+                  
+                  <td>
+                    <a (click)="edit(todo)">
+                      <span *ngIf="todo!==editTodo">{{todo.category}}</span>
+                      <input *ngIf="todo===editTodo" [(ngModel)]="todo.category"
+                      (blur)="update()" (keyup.enter)="update()">
+                    </a>  
+                  </td>
+                  
+                  <td>
+                    <a>
+                      <span>
+                          <button class="delete" title="deletetodo"
+                          (click)="delete(todo)">x</button>
+                        </span>
+                    </a>
+                  </td>
+
+             </tr>
+         <!-- </li>  -->
+      </table> 
+      </ul>
+
+     
+</div>
+
+
+  <app-category-list></app-category-list>
+  
