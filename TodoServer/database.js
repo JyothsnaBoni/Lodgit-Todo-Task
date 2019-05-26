@@ -6,9 +6,9 @@ let sqlite3 = require('sqlite3').verbose();
  */
 
 /* Load database file (Creates file if not exists) */
-let db = new sqlite3.Database('./test2.db');
+let db = new sqlite3.Database('./sqlite.db');
 
-/* Init car and driver tables if they don't exist */
+/* Init todo and category tables if they don't exist */
 let init = function () {
     db.run(`CREATE TABLE if not exists todo(subject TEXT NOT NULL,status TEXT, created TEXT, modified TEXT, category TEXT,PRIMARY KEY ( subject, category))`);
       

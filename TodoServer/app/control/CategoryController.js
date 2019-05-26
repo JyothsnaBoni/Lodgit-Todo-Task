@@ -4,7 +4,7 @@ const CategoryDao = require('../dao/CategoryDao');
 /* Load Controller Common function */
 const common = require('../control/common');
 
-/* Load Driver entity */
+/* Load Category entity */
 const Category = require('../model/Category');
 
 /**

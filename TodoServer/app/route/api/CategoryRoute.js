@@ -7,7 +7,7 @@ const CategoryController = require('../../control/CategoryController');
 const categoryController = new CategoryController();
 
 /**
- * Driver Entity routes
+ * Category Entity routes
  */
 router.get('/count', function (req, res) {
     categoryController.countAll(res);
