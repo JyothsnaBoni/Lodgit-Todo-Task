@@ -24,11 +24,14 @@ $ code     : written in ES6 and uses promises
 2. Navigate to the folder  : Logit-Todo-Task/TodoServer`
 3. Install dependencies    : npm install
 
+## To start the server:
+node server.js 9000
+
 
   
 ## To start the server : node server.js 
 
-server url: http://localhost:3000/Todo
+server url: http://localhost:9000/Todo
 
 #TodoClient README.md can be found in TodoClient
 
