@@ -98,7 +98,7 @@ class CategoryController {
      * returns database deletion status
      */
     deleteById(req, res) {
-        let category = req.params.category;
+        let name = req.params.name;
 
         this.categoryDao.deleteById(name)
             .then(this.common.editSuccess(res))
